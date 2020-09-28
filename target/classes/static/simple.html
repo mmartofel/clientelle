@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<img alt="BIG" src="/images/logo.png">
+
+<h2>Znajdź delikwenta</h2>
+
+<p>Wprowadź dane delikwenta do wyszukania</p>
+
+<!--Make sure the form has the autocomplete function switched off:-->
+<!-- <form autocomplete="off" action="">
+    <div class="autocomplete" style="width:400px;">
+        <input id="myInput" type="text" placeholder="Imię, Nazwisko itd.">
+    </div>
+    <input type="submit" value="szukaj" onClick="refreshDane()">
+</form>
+-->
+
+
+     <button onclick="refreshDane(1)">Try it</button>
+     <button onclick="refreshDane(2)">Try it</button>
+     <button onclick="refreshDane(3)">Try it</button>
+
+
+ 
+<br><br>
+
+<table>
+	<tbody>
+		<tr>
+			<td id="imie"> dupa </td>
+			<td id="nazwisko"> dupa </td>
+			<td id="pesel"> dupa </td>
+			<td id="rating"> dupa </td> 
+		</tr>
+	</tbody>
+</table>
+
+<img id="fotka" alt="zdjęcie" width="200" height="200">
+
+<script>
+
+function refreshDane(iid) { 
+dane = new XMLHttpRequest();
+dane.open('GET', '/delikwent/find/' + iid, true);
+dane.send();
+// console.log(dane)
+console.log(dane.response)
+console.log(dane.url)
+console.log(dane.responseText)
+
+dane.onload = function() {
+    var imie = JSON.parse(dane.responseText)
+    console.log(imie)
+    console.log(imie.id)
+    document.getElementById('imie').innerHTML = imie.imie
+    document.getElementById('nazwisko').innerHTML = imie.nazwisko
+    document.getElementById('pesel').innerHTML = imie.pesel
+    document.getElementById('rating').innerHTML = imie.rating
+    document.getElementById('fotka').src = '/images/' + imie.fotka
+	}
+}
+
+// refreshDane()
+
+</script>
+
+</body>
+</html>
