@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: clientelle-repo
+  namespace: pipelines-tutorial
+spec:
+  params:
+  - name: url
+    value: http://github.com/mmartofel/clientelle.git
+  type: git

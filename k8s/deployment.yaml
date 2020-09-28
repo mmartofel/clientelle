@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: clientelle
+  name: clientelle
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clientelle
+  template:
+    metadata:
+      labels:
+        app: clientelle
+    spec:
+      containers:
+        - image: quay.io/mmartofe/clientelle:latest
+          imagePullPolicy: Always
+          name: clientelle
+          ports:
+            - containerPort: 8080
+              protocol: TCP
