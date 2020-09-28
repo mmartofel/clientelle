@@ -1,6 +1,6 @@
-oc import-image quay.io/mmartofe/webapp --confirm
-oc new-app quay.io/mmartofe/webapp
-oc expose svc/webapp
+oc import-image quay.io/mmartofe/clientelle --confirm
+oc new-app quay.io/mmartofe/clientelle
+oc expose svc/clientelle
 
 oc get routes
 
