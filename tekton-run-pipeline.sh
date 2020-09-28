@@ -1,7 +1,13 @@
 
 if [ "$1" == "" ] && [ "$2" == "" ]; then
 
- echo "Please provide two parameters:"
+ echo
+ echo "Please provide two parameters, comment for commit followed by git branch name:"
+ echo 
+ echo example:
+ echo 
+ echo "./tekton-run-pipeline.sh \"sanity commit\" master"
+ echo
 
 else
 
