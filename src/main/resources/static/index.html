@@ -64,42 +64,43 @@
             background-color: DodgerBlue !important;
             color: #ffffff;
         }
+        
+        table, th, td {
+ 			border: 1px solid black;
+  			border-collapse: collapse;
+}
     </style>
 </head>
 <body>
 
 <img alt="BIG" src="/images/logo.png">
 
-<h2>Znajdź delikwenta</h2>
+<h2>Kliknij przycisk poniżej aby poznać delikwenta</h2>
 
-<p>Wprowadź dane delikwenta do wyszukania</p>
-
-<!--Make sure the form has the autocomplete function switched off:-->
-<form autocomplete="off" action="">
-    <div class="autocomplete" style="width:400px;">
-        <input id="myInput" type="text" placeholder="Imię, Nazwisko itd.">
-    </div>
-    <input type="submit" value="szukaj" onClick="refreshDane(1)">
-</form>
-
-
-     <button onclick="refreshDane(1)">Try it</button>
-     <button onclick="refreshDane(2)">Try it</button>
-     <button onclick="refreshDane(3)">Try it</button>
+     <button onclick="refreshDane(1)">Marek</button>
+     <button onclick="refreshDane(2)">Michał</button>
+     <button onclick="refreshDane(3)">Jarek</button>
  
 <br><br>
 
 <table>
 	<tbody>
 		<tr>
-			<td id="imie"> dupa </td>
-			<td id="nazwisko"> dupa </td>
-			<td id="pesel"> dupa </td>
-			<td id="rating"> dupa </td> 
+			<th>Imię</th>
+			<th>Nazwisko</th>
+			<th>PESEL</th>
+			<th>Zdolność kredytowa</th>
+		</tr>
+		<tr>
+			<td id="imie"></td>
+			<td id="nazwisko"></td>
+			<td id="pesel"></td>
+			<td id="rating"></td> 
 		</tr>
 	</tbody>
 </table>
 
+<br>
 <img id="fotka" alt="zdjęcie" width="200" height="200">
 
 
