@@ -6,70 +6,31 @@
 </head>
 <body>
 
-
-<img alt="BIG" src="/images/logo.png">
-
-<h2>Znajdź delikwenta</h2>
-
-<p>Wprowadź dane delikwenta do wyszukania</p>
-
-<!--Make sure the form has the autocomplete function switched off:-->
-<!-- <form autocomplete="off" action="">
-    <div class="autocomplete" style="width:400px;">
-        <input id="myInput" type="text" placeholder="Imię, Nazwisko itd.">
-    </div>
-    <input type="submit" value="szukaj" onClick="refreshDane()">
-</form>
--->
-
-
-     <button onclick="refreshDane(1)">Try it</button>
-     <button onclick="refreshDane(2)">Try it</button>
-     <button onclick="refreshDane(3)">Try it</button>
-
-
- 
-<br><br>
-
-<table>
-	<tbody>
-		<tr>
-			<td id="imie"> dupa </td>
-			<td id="nazwisko"> dupa </td>
-			<td id="pesel"> dupa </td>
-			<td id="rating"> dupa </td> 
-		</tr>
-	</tbody>
-</table>
-
-<img id="fotka" alt="zdjęcie" width="200" height="200">
-
-<script>
-
-function refreshDane(iid) { 
-dane = new XMLHttpRequest();
-dane.open('GET', '/delikwent/find/' + iid, true);
-dane.send();
-// console.log(dane)
-console.log(dane.response)
-console.log(dane.url)
-console.log(dane.responseText)
-
-dane.onload = function() {
-    var imie = JSON.parse(dane.responseText)
-    console.log(imie)
-    console.log(imie.id)
-    document.getElementById('imie').innerHTML = imie.imie
-    document.getElementById('nazwisko').innerHTML = imie.nazwisko
-    document.getElementById('pesel').innerHTML = imie.pesel
-    document.getElementById('rating').innerHTML = imie.rating
-    document.getElementById('fotka').src = '/images/' + imie.fotka
-	}
-}
-
-// refreshDane()
-
-</script>
+	<table data-role="table" id="table-1" class="ui-responsive">
+		<thead>
+			<tr>
+				<th>A</th>
+				<th data-priority="1">B</th>
+				<th data-priority="2">C</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>a</td>
+				<td>b</td>
+				<td>c</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="ui-field-contain">
+		<label for="select-1">Select:</label>
+		<select name="select-1" id="select-1">
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="C">C</option>
+		</select>
+	</div>
 
 </body>
 </html>
