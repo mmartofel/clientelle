@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: master
+    jkube.io/git-url: https://github.com/mmartofel/clientelle.git
+    app.openshift.io/vcs-uri: https://github.com/mmartofel/clientelle.git
+    jkube.io/git-commit: bb2f012dd60449f092028a11fbd6d53135da53e2
+    jkube.io/git-branch: master
+    jkube.io/scm-url: https://github.com/spring-projects/spring-boot/clientelle
+    jkube.io/scm-tag: HEAD
+    prometheus.io/path: /metrics
+    prometheus.io/port: "9779"
+    prometheus.io/scrape: "true"
+  labels:
+    expose: "true"
+    app: clientelle
+    provider: jkube
+    version: 0.0.1-SNAPSHOT
+    group: pl.bik
+  name: clientelle
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: clientelle
+    provider: jkube
+    group: pl.bik

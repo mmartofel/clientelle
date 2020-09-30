@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    name: clientelle
+  spec:
+    tags:
+    - from:
+        kind: ImageStreamImage
+        name: clientelle@sha256:5e9d4f0f2a6c32c63b062a5ee5562132d1b5802d4811605e6e3a9127393d67ae
+        namespace: pipelines-tutorial
+      name: latest
