@@ -6,7 +6,7 @@ metadata:
     app.openshift.io/vcs-ref: master
     jkube.io/git-url: https://github.com/mmartofel/clientelle.git
     app.openshift.io/vcs-uri: https://github.com/mmartofel/clientelle.git
-    jkube.io/git-commit: bb2f012dd60449f092028a11fbd6d53135da53e2
+    jkube.io/git-commit: fe331f0c4d67b1443606761b8cebf5d868f04322
     jkube.io/git-branch: master
     jkube.io/scm-url: https://github.com/spring-projects/spring-boot/clientelle
     jkube.io/scm-tag: HEAD
@@ -36,7 +36,7 @@ spec:
         jkube.io/git-url: https://github.com/mmartofel/clientelle.git
         app.openshift.io/vcs-uri: https://github.com/mmartofel/clientelle.git
         jkube.io/scm-tag: HEAD
-        jkube.io/git-commit: bb2f012dd60449f092028a11fbd6d53135da53e2
+        jkube.io/git-commit: fe331f0c4d67b1443606761b8cebf5d868f04322
       labels:
         app: clientelle
         provider: jkube

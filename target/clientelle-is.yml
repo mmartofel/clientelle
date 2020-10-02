@@ -10,6 +10,6 @@ items:
     tags:
     - from:
         kind: ImageStreamImage
-        name: clientelle@sha256:5e9d4f0f2a6c32c63b062a5ee5562132d1b5802d4811605e6e3a9127393d67ae
+        name: clientelle@sha256:2bc73bd169424503f3c3e624011a8588f396e90aa51d9770ad75de92e1e69d1f
         namespace: pipelines-tutorial
       name: latest

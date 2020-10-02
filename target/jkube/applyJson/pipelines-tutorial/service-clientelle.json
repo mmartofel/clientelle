@@ -6,7 +6,7 @@
       "app.openshift.io/vcs-ref" : "master",
       "app.openshift.io/vcs-uri" : "https://github.com/mmartofel/clientelle.git",
       "jkube.io/git-branch" : "master",
-      "jkube.io/git-commit" : "bb2f012dd60449f092028a11fbd6d53135da53e2",
+      "jkube.io/git-commit" : "fe331f0c4d67b1443606761b8cebf5d868f04322",
       "jkube.io/git-url" : "https://github.com/mmartofel/clientelle.git",
       "jkube.io/scm-tag" : "HEAD",
       "jkube.io/scm-url" : "https://github.com/spring-projects/spring-boot/clientelle",
@@ -14,7 +14,7 @@
       "prometheus.io/port" : "9779",
       "prometheus.io/scrape" : "true"
     },
-    "creationTimestamp" : "2020-09-30T19:09:22Z",
+    "creationTimestamp" : "2020-10-02T10:53:15Z",
     "labels" : {
       "app" : "clientelle",
       "expose" : "true",
@@ -24,12 +24,12 @@
     },
     "name" : "clientelle",
     "namespace" : "pipelines-tutorial",
-    "resourceVersion" : "78336537",
+    "resourceVersion" : "80222163",
     "selfLink" : "/api/v1/namespaces/pipelines-tutorial/services/clientelle",
-    "uid" : "b88c53d3-e88b-406b-9efe-4130c2cda773"
+    "uid" : "378c1d41-507b-41f2-ab84-3cca5eb2538a"
   },
   "spec" : {
-    "clusterIP" : "172.30.130.212",
+    "clusterIP" : "172.30.173.107",
     "ports" : [ {
       "name" : "http",
       "port" : 8080,

@@ -6,12 +6,12 @@
       "app.openshift.io/vcs-ref" : "master",
       "app.openshift.io/vcs-uri" : "https://github.com/mmartofel/clientelle.git",
       "jkube.io/git-branch" : "master",
-      "jkube.io/git-commit" : "bb2f012dd60449f092028a11fbd6d53135da53e2",
+      "jkube.io/git-commit" : "fe331f0c4d67b1443606761b8cebf5d868f04322",
       "jkube.io/git-url" : "https://github.com/mmartofel/clientelle.git",
       "jkube.io/scm-tag" : "HEAD",
       "jkube.io/scm-url" : "https://github.com/spring-projects/spring-boot/clientelle"
     },
-    "creationTimestamp" : "2020-09-30T17:52:11Z",
+    "creationTimestamp" : "2020-10-02T10:53:15Z",
     "generation" : 1,
     "labels" : {
       "app" : "clientelle",
@@ -21,9 +21,9 @@
     },
     "name" : "clientelle",
     "namespace" : "pipelines-tutorial",
-    "resourceVersion" : "78272982",
+    "resourceVersion" : "80222170",
     "selfLink" : "/apis/apps.openshift.io/v1/namespaces/pipelines-tutorial/deploymentconfigs/clientelle",
-    "uid" : "fa7bd7b3-c578-4884-b8b6-94916fc8c1fd"
+    "uid" : "36076a89-bd43-45f2-8ad2-29252e1036a2"
   },
   "spec" : {
     "replicas" : 1,
@@ -51,7 +51,7 @@
           "app.openshift.io/vcs-ref" : "master",
           "app.openshift.io/vcs-uri" : "https://github.com/mmartofel/clientelle.git",
           "jkube.io/git-branch" : "master",
-          "jkube.io/git-commit" : "bb2f012dd60449f092028a11fbd6d53135da53e2",
+          "jkube.io/git-commit" : "fe331f0c4d67b1443606761b8cebf5d868f04322",
           "jkube.io/git-url" : "https://github.com/mmartofel/clientelle.git",
           "jkube.io/scm-tag" : "HEAD",
           "jkube.io/scm-url" : "https://github.com/spring-projects/spring-boot/clientelle"
@@ -74,7 +74,7 @@
               }
             }
           } ],
-          "image" : "bik/clientelle:latest",
+          "image" : "clientelle:latest",
           "imagePullPolicy" : "IfNotPresent",
           "livenessProbe" : {
             "failureThreshold" : 3,
@@ -88,7 +88,20 @@
             "successThreshold" : 1,
             "timeoutSeconds" : 1
           },
-          "name" : "bik-clientelle",
+          "name" : "spring-boot",
+          "ports" : [ {
+            "containerPort" : 8080,
+            "name" : "http",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 9779,
+            "name" : "prometheus",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 8778,
+            "name" : "jolokia",
+            "protocol" : "TCP"
+          } ],
           "readinessProbe" : {
             "failureThreshold" : 3,
             "httpGet" : {
@@ -121,11 +134,11 @@
     }, {
       "imageChangeParams" : {
         "automatic" : true,
-        "containerNames" : [ "bik-clientelle" ],
+        "containerNames" : [ "spring-boot" ],
         "from" : {
           "kind" : "ImageStreamTag",
           "name" : "clientelle:latest",
-          "namespace" : "bik"
+          "namespace" : "pipelines-tutorial"
         }
       },
       "type" : "ImageChange"
